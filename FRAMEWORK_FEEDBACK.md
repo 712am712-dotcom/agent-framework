@@ -191,6 +191,25 @@ type in `brand_config.template.json` and `sources.py`.
 
 ---
 
+## FRICTION 7 — Prompt filename must use hyphens matching AGENT_NAME
+
+**Severity:** Low but causes confusing runtime crash.
+
+**What happened:**
+`_load_prompt()` builds the path as `f"{AGENT_NAME}_prompt.txt"`. With
+`AGENT_NAME=ae-intel`, this resolves to `ae-intel_prompt.txt`. The file was
+created as `ae_intel_prompt.txt` (underscore). Silent at commit time, crashes
+at first run with `FileNotFoundError`.
+
+**Fix:**
+Document in SCAFFOLDING.md Step 3: "Name the prompt file
+`{agent_name}_prompt.txt` where `agent_name` exactly matches the `AGENT_NAME`
+env var (hyphens, not underscores). Example: `ae-intel_prompt.txt`."
+
+Or: sanitize in `_load_prompt()` by replacing `-` with `_` in the filename.
+
+---
+
 ## PRIORITY ORDER FOR FIXES (before building joe-intel)
 
 1. **P0:** Add `queued` status to content_jobs schema (Supabase migration needed)
