@@ -1,0 +1,42 @@
+{
+  "_comment": "Copy this file to brand_config.json and fill in all fields. Remove _comment.",
+
+  "brand_id": "{brand_slug}",
+  "agent_name": "{brand_slug}-intel",
+
+  "voice": "{one-line tone descriptor used by Scribe — e.g. 'high-energy, punchy, no jargon, ends every post with a direct challenge'}",
+
+  "visual_template": "{Remotion composition ID — e.g. 'AESignal-vertical-30s', 'MFDTradeToday-vertical-30s'}",
+
+  "target_platforms": ["{platform1}", "{platform2}"],
+
+  "posting_schedule": {
+    "_comment": "UTC hours when the agent should fire. Array of integers 0–23.",
+    "active_hours_utc": [12, 16, 21],
+    "scan_interval_minutes": 30,
+    "overnight_interval_minutes": 60
+  },
+
+  "cta": "{Fixed CTA string appended to all content — e.g. 'Follow @artificialeducation'}",
+
+  "content_limits": {
+    "max_jobs_per_day": 3,
+    "max_llm_calls_per_day": 20,
+    "min_score_to_escalate": 7
+  },
+
+  "formats": {
+    "primary": "vertical_30s",
+    "supported": ["vertical_30s", "square_30s", "landscape_30s"]
+  },
+
+  "signal_sources": {
+    "_comment": "Mirror of Field 7 in brief.md. Used by signals/sources.py.",
+    "primary": [
+      {"name": "{source name}", "type": "rss", "url": "{feed url}"}
+    ],
+    "secondary": [
+      {"name": "{source name}", "type": "rss", "url": "{feed url}"}
+    ]
+  }
+}

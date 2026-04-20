@@ -1,0 +1,38 @@
+{
+  "_comment": "This is the TEMPLATE config — copy and customize for your brand. See brand_config.template.json for all fields with descriptions.",
+
+  "brand_id": "REPLACE_ME",
+  "agent_name": "REPLACE_ME-intel",
+
+  "voice": "REPLACE_ME — e.g. high-energy, punchy, no jargon",
+
+  "visual_template": "REPLACE_ME — e.g. AESignal-vertical-30s",
+
+  "target_platforms": ["instagram", "tiktok"],
+
+  "posting_schedule": {
+    "active_hours_utc": [12, 16, 21],
+    "scan_interval_minutes": 30,
+    "overnight_interval_minutes": 60
+  },
+
+  "cta": "REPLACE_ME — e.g. Follow @yourbrand",
+
+  "content_limits": {
+    "max_jobs_per_day": 3,
+    "max_llm_calls_per_day": 20,
+    "min_score_to_escalate": 7
+  },
+
+  "formats": {
+    "primary": "vertical_30s",
+    "supported": ["vertical_30s", "square_30s", "landscape_30s"]
+  },
+
+  "signal_sources": {
+    "primary": [
+      {"name": "REPLACE_ME", "type": "rss", "url": "https://REPLACE_ME/feed"}
+    ],
+    "secondary": []
+  }
+}
